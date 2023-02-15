@@ -1,0 +1,2 @@
+# GenerateClass
+練習

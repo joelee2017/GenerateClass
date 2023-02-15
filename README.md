@@ -1,2 +1,2 @@
 # GenerateClass
-練習
+生成類別程式

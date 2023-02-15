@@ -2,19 +2,20 @@
 var properties = new List<(string propertyName, string propertyType, string description)>()
 {
     ("Country", "string?","國家別"),
-    ("Proportion", "int?","1/3比例(%)")
+    ("Proportion", "int?","比例(%)")
 };
 GenerateClass(
-    "CountryConfiguration.cs",
-    properties,
     "CountryConfiguration",
+    properties,
     "D:/ProjectTest/GenerateClass/GenerateClass/File"
 );
 Console.WriteLine("GenerateClass done!");
 Console.ReadKey();
-static void GenerateClass(string className, List<(string propertyName, string propertyType, string description)> properties, string namespaceName, string filePath)
+static void GenerateClass(string className, List<(string propertyName, string propertyType, string description)> properties, string filePath)
 {
-    filePath = Path.Combine(filePath, className);
+    string fileName = className + ".cs";
+    string namespaceName = className;
+    filePath = Path.Combine(filePath, fileName);
     using (StreamWriter streamWriter = new StreamWriter(filePath))
     {
         // 加入檔頭 
